@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9DD0999E-91E3-44E6-AB9D-A82B93983499}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MenuPrincipalB</RootNamespace>
+    <AssemblyName>MenuPrincipalB</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="fClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fClientes.Designer.cs">
+      <DependentUpon>fClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fFormasPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fFormasPagamento.Designer.cs">
+      <DependentUpon>fFormasPagamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fFornecedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fFornecedores.Designer.cs">
+      <DependentUpon>fFornecedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fGrupos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fGrupos.Designer.cs">
+      <DependentUpon>fGrupos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fLogin.Designer.cs">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fMarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fMarcas.Designer.cs">
+      <DependentUpon>fMarcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fMenu.Designer.cs">
+      <DependentUpon>fMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fOrcamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fOrcamento.Designer.cs">
+      <DependentUpon>fOrcamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fPedido.Designer.cs">
+      <DependentUpon>fPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fProdutos.Designer.cs">
+      <DependentUpon>fProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fShow.designer.cs">
+      <DependentUpon>fShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fVendedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fVendedores.Designer.cs">
+      <DependentUpon>fVendedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Estoque.cs" />
+    <Compile Include="Models\Orcamento.cs" />
+    <Compile Include="Models\Pedido.cs" />
+    <Compile Include="Models\Transportadores.cs" />
+    <Compile Include="Models\FormasPagamento.cs" />
+    <Compile Include="Models\Marcas.cs" />
+    <Compile Include="Models\Cep.cs" />
+    <Compile Include="Models\Clientes.cs" />
+    <Compile Include="Models\CLogin.cs" />
+    <Compile Include="Models\Conexao.cs" />
+    <Compile Include="Models\Fornecedores.cs" />
+    <Compile Include="Models\Grupos.cs" />
+    <Compile Include="Models\Produtos.cs" />
+    <Compile Include="Models\Validacao.cs" />
+    <Compile Include="Models\Vendedores.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="fTransportadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fTransportadores.Designer.cs">
+      <DependentUpon>fTransportadores.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="fClientes.resx">
+      <DependentUpon>fClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fFormasPagamento.resx">
+      <DependentUpon>fFormasPagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fFornecedores.resx">
+      <DependentUpon>fFornecedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fGrupos.resx">
+      <DependentUpon>fGrupos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fLogin.resx">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fMarcas.resx">
+      <DependentUpon>fMarcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fMenu.resx">
+      <DependentUpon>fMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fOrcamento.resx">
+      <DependentUpon>fOrcamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fPedido.resx">
+      <DependentUpon>fPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fProdutos.resx">
+      <DependentUpon>fProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fShow.resx">
+      <DependentUpon>fShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fVendedores.resx">
+      <DependentUpon>fVendedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="fTransportadores.resx">
+      <DependentUpon>fTransportadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pago.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icone_close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\supplier-6-570171.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\supplier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\office365_appgrid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-cps.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Implementações.txt" />
+    <None Include="Resources\customer.png" />
+    <None Include="Resources\supplier1.png" />
+    <None Include="Resources\businessmen.png" />
+    <None Include="Resources\checks.png" />
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
