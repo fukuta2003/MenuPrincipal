@@ -941,6 +941,9 @@ namespace Sistema.Models
                         
                         MessageBox.Show("Produtos baixados com sucesso !");
                     
+                    } else
+                    {
+                        MessageBox.Show("Problemas no faturamento deste Pedido, verifique !");
                     }
                 }
 
