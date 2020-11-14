@@ -115,7 +115,7 @@
     <Compile Include="fVendedores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fVendedores.Designer.cs">
+    <Compile Include="fVendedores.designer.cs">
       <DependentUpon>fVendedores.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Estoque.cs" />

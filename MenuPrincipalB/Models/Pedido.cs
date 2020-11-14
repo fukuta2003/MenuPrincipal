@@ -444,18 +444,7 @@ namespace Sistema.Models
             return ret;
         }
 
-
-
-
-
-
-
-
         // final da classe
-
-
-
-
 
     }
 }

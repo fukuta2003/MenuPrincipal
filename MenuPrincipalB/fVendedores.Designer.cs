@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fVendedores));
             this.label1 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
+            this.txtComissao = new System.Windows.Forms.TextBox();
             this.gpoDados = new System.Windows.Forms.GroupBox();
             this.pictNao = new System.Windows.Forms.PictureBox();
             this.pictOK = new System.Windows.Forms.PictureBox();
-            this.txtComissao = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -67,20 +66,32 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 23);
+            this.label1.Location = new System.Drawing.Point(8, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 13);
-            this.label1.TabIndex = 11;
+            this.label1.TabIndex = 7;
             this.label1.Text = "ID - F2-Mostrar";
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(16, 42);
+            this.txtID.Location = new System.Drawing.Point(11, 25);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(65, 20);
-            this.txtID.TabIndex = 12;
+            this.txtID.TabIndex = 8;
+            this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             this.txtID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtID_KeyDown);
             this.txtID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtID_KeyPress);
+            // 
+            // txtComissao
+            // 
+            this.txtComissao.Location = new System.Drawing.Point(16, 199);
+            this.txtComissao.Name = "txtComissao";
+            this.txtComissao.Size = new System.Drawing.Size(57, 20);
+            this.txtComissao.TabIndex = 13;
+            this.txtComissao.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtComissao.TextChanged += new System.EventHandler(this.txtComissao_TextChanged);
+            this.txtComissao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtComissao_KeyPress);
+            this.txtComissao.Leave += new System.EventHandler(this.txtComissao_Leave);
             // 
             // gpoDados
             // 
@@ -112,17 +123,16 @@
             this.gpoDados.Controls.Add(this.txtNome);
             this.gpoDados.Controls.Add(this.label2);
             this.gpoDados.Enabled = false;
-            this.gpoDados.Location = new System.Drawing.Point(17, 70);
+            this.gpoDados.Location = new System.Drawing.Point(12, 53);
             this.gpoDados.Name = "gpoDados";
             this.gpoDados.Size = new System.Drawing.Size(805, 314);
-            this.gpoDados.TabIndex = 13;
+            this.gpoDados.TabIndex = 9;
             this.gpoDados.TabStop = false;
             // 
             // pictNao
             // 
             this.pictNao.BackgroundImage = global::MenuPrincipalB.Properties.Resources.close;
             this.pictNao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictNao.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictNao.ErrorImage")));
             this.pictNao.Location = new System.Drawing.Point(378, 155);
             this.pictNao.Name = "pictNao";
             this.pictNao.Size = new System.Drawing.Size(15, 12);
@@ -141,16 +151,6 @@
             this.pictOK.TabStop = false;
             this.pictOK.Visible = false;
             // 
-            // txtComissao
-            // 
-            this.txtComissao.Location = new System.Drawing.Point(16, 199);
-            this.txtComissao.Name = "txtComissao";
-            this.txtComissao.Size = new System.Drawing.Size(76, 20);
-            this.txtComissao.TabIndex = 13;
-            this.txtComissao.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtComissao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtComissao_KeyPress);
-            this.txtComissao.Leave += new System.EventHandler(this.txtComissao_Leave);
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -162,27 +162,40 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnExcluir.ForeColor = System.Drawing.Color.White;
-            this.btnExcluir.Location = new System.Drawing.Point(104, 235);
+            this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnExcluir.BackgroundImage = global::MenuPrincipalB.Properties.Resources.delete;
+            this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.ForeColor = System.Drawing.Color.Black;
+            this.btnExcluir.Location = new System.Drawing.Point(89, 230);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(76, 65);
             this.btnExcluir.TabIndex = 15;
             this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnExcluir.UseVisualStyleBackColor = false;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            this.btnExcluir.MouseLeave += new System.EventHandler(this.btnExcluir_MouseLeave);
+            this.btnExcluir.MouseHover += new System.EventHandler(this.btnExcluir_MouseHover);
             // 
             // btnSalvar
             // 
-            this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnSalvar.ForeColor = System.Drawing.Color.White;
-            this.btnSalvar.Location = new System.Drawing.Point(14, 235);
+            this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnSalvar.BackgroundImage = global::MenuPrincipalB.Properties.Resources.save_as;
+            this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.ForeColor = System.Drawing.Color.Black;
+            this.btnSalvar.Location = new System.Drawing.Point(14, 230);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(76, 65);
+            this.btnSalvar.Size = new System.Drawing.Size(69, 65);
             this.btnSalvar.TabIndex = 14;
             this.btnSalvar.Text = "&Salvar";
+            this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            this.btnSalvar.MouseLeave += new System.EventHandler(this.btnSalvar_MouseLeave);
+            this.btnSalvar.MouseHover += new System.EventHandler(this.btnSalvar_MouseHover);
             // 
             // txtRg
             // 
@@ -354,17 +367,17 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(646, 51);
+            this.label15.Location = new System.Drawing.Point(641, 34);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(139, 13);
-            this.label15.TabIndex = 14;
+            this.label15.TabIndex = 10;
             this.label15.Text = "* Preenchimento Obrigatório";
             // 
             // fVendedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 406);
+            this.ClientSize = new System.Drawing.Size(826, 373);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.gpoDados);
@@ -387,8 +400,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.GroupBox gpoDados;
         private System.Windows.Forms.TextBox txtComissao;
+        private System.Windows.Forms.GroupBox gpoDados;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnSalvar;
@@ -413,7 +426,7 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.PictureBox pictNao;
         private System.Windows.Forms.PictureBox pictOK;
+        private System.Windows.Forms.PictureBox pictNao;
     }
 }

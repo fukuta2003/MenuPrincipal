@@ -79,8 +79,10 @@ namespace MenuPrincipalB
             cmbEstado.Text = VendX.Estado.ToString();
             txtTelefone.Text = VendX.Telefone.ToString();
             txtCelular.Text = VendX.Celular.ToString();
+            
             txtCPF.Text = VendX.Cpf.ToString();
             Verifica_Cpf(); // funcao que verifica se o cpf cadastrado esta correto ou nao !
+            
             txtRg.Text = VendX.Rg.ToString();
             txtComissao.Text = VendX.Comissao.ToString();
 
@@ -88,11 +90,9 @@ namespace MenuPrincipalB
 
         private void SalvarDadosnaClasse()
         {
-            if (string.IsNullOrEmpty(txtID.Text))
-            {
+            if (string.IsNullOrEmpty(txtID.Text)){
                 VendX.Id = 0;
-            }
-            else
+            } else
             {
                 VendX.Id = int.Parse(txtID.Text);
             }
@@ -209,6 +209,11 @@ namespace MenuPrincipalB
 
         }
 
+        private void txtComissao_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
         private void txtCPF_Leave(object sender, EventArgs e)
         {
             Verifica_Cpf();
@@ -286,6 +291,28 @@ namespace MenuPrincipalB
 
         private void txtID_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnExcluir_MouseHover(object sender, EventArgs e)
+        {
+            btnExcluir.BackColor = Color.Red;
+        }
+
+        private void btnExcluir_MouseLeave(object sender, EventArgs e)
+        {
+            btnExcluir.BackColor = Color.LightYellow;
+        }
+
+        private void btnSalvar_MouseHover(object sender, EventArgs e)
+        {
+            btnSalvar.BackColor = Color.LightBlue;
+
+        }
+
+        private void btnSalvar_MouseLeave(object sender, EventArgs e)
+        {
+            btnSalvar.BackColor = Color.LightYellow;
 
         }
 
