@@ -12,7 +12,7 @@ using Sistema.Models;
 using System.Collections;
 
 
-namespace MenuPrincipalB 
+namespace Sistema
 {
     public partial class fShow : Form 
     {
