@@ -1,169 +1,259 @@
-﻿using Sistema.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using Sistema.Models;
+using System.Linq;
 
-
-namespace MenuPrincipalB
+namespace Sistema
 {
+    
     public partial class fMenu : Form
     {
 
-        fLogin lg = new fLogin();
+        public bool bdExiste = false;
+        public string LoginOperacao = ""; // tipo de operador (Administrador,Gerente,Financeiro,Caixa ECF,Operador)
+        public string LoginUsuario = "";
 
+        Db bancodados = new Db();
+        Empresa emp = new Empresa();
+
+       
         public fMenu()
         {
+            if (!bancodados.Conecta())
+            {
+                MessageBox.Show("Erro de conexão com banco de dados !");
+                Application.Exit();
+                bdExiste = false;
+            } else
+            {
+                bdExiste = true;
+            }
             InitializeComponent();
         }
 
+        private void fMenu_Load(object sender, EventArgs e)
+        {
+
+            panel1.Top = this.Bottom - 110;
+
+            DateTime xData = DateTime.Today;
+
+            Controls.OfType<MdiClient>().FirstOrDefault().BackColor = Color.DarkRed;
+
+            if (emp.Consulta(1))
+            {
+                toolNomeEmpresa.Text = emp.RazaoSocial.ToString();
+                toolNomeUsuarioAtivo.Text = "";
+                toolDataSistema.Text = DateTime.Now.ToString("dd-MM-yyyy");
+
+                if (emp.Validade < xData)
+                {
+                    MessageBox.Show("Problemas de conexão com o Banco de Dados \nverifique com o Desenvolvedor ou Revendedor", "Erro 1806");
+                    Application.Exit();
+                }    
+
+            } else
+            {
+                toolNomeEmpresa.Text = "EMPRESA NÃO REGISTRADA";
+                Application.Exit();
+            }
+
+
+            if (bdExiste == true)
+            {
+                fLogin frmLogin = new fLogin();
+               // frmLogin.MdiParent = this;
+                frmLogin.StartPosition = FormStartPosition.CenterScreen;
+                frmLogin.ShowDialog();
+
+                if(frmLogin.ParametroID.ToString()=="EXIT")
+                {
+                    Application.Exit();
+
+                } else { 
+
+                        Usuarios usr = new Usuarios();
+                        if (usr.Consulta(0, frmLogin.ParametroID.ToString())){
+
+                            toolNomeUsuarioAtivo.Text = "( " + usr.Login.ToString() + " ) - " + usr.Nome.ToString() + " -> " + usr.Operacao.ToString();
+                            LoginOperacao = usr.Operacao.ToString();
+                            LoginUsuario = usr.Login.ToString();
+                        } else
+                        {
+                            toolNomeUsuarioAtivo.Text = "";
+                        }
+
+                }
+
+            } else
+            {
+                MessageBox.Show("CLIQUE EM OK para sair do sistema !");
+                Application.Exit();
+            }
+        }
+    
+
+
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ChamaClientes();
+            ChamaClientes();         
+        }
+
+        private void cadastrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ChamaUsuarios()
+        {
+            fUsuarios usr = new fUsuarios();
+            usr.MdiParent = this;
+            usr.StartPosition = FormStartPosition.CenterScreen;
+            usr.Show();
+
+        }
+
+
+        private void ChamaCentroVendas()
+        {
+            fCentroVendas fcv = new fCentroVendas();
+            fcv.MdiParent = this;
+            fcv.StartPosition = FormStartPosition.CenterScreen;
+            fcv.Show();
+
         }
 
         private void ChamaClientes()
         {
             fClientes cli = new fClientes();
-            cli.Text = "CADASTRO DE CLIENTES";
-            cli.StartPosition = FormStartPosition.CenterScreen;
-            cli.WindowState = FormWindowState.Normal;
             cli.MdiParent = this;
+            cli.StartPosition = FormStartPosition.CenterScreen;
             cli.Show();
+
         }
+
         private void ChamaFornecedores()
         {
-            fFornecedores forn = new fFornecedores();
-            forn.Text = "CADASTRO DE FORNECEDORES";
-            forn.StartPosition = FormStartPosition.CenterScreen;
-            forn.WindowState = FormWindowState.Normal;
-            forn.MdiParent = this;
-            forn.Show();
-        }
-
-        private void ChamaVendedores()
-        {
-            fVendedores forn = new fVendedores();
-            forn.Text = "CADASTRO DE VENDEDORES";
-            forn.StartPosition = FormStartPosition.CenterScreen;
-            forn.WindowState = FormWindowState.Normal;
-            forn.MdiParent = this;
-            forn.Show();
+            Fornecedores fd = new Fornecedores();
+            fd.MdiParent = this;
+            fd.StartPosition = FormStartPosition.CenterScreen;
+            fd.Show();
 
         }
 
-        private void ChamaGrupos()
+       
+        private void ChamaContasReceber()
         {
-            fGrupos grp = new fGrupos();
-            grp.Text = "CADASTRO DE GRUPOS DE PRODUTOS";
-            grp.StartPosition = FormStartPosition.CenterScreen;
-            grp.WindowState = FormWindowState.Normal;
-            grp.MdiParent = this;
-            grp.Show();
+            fContasReceber fcp = new fContasReceber();
+            fcp.MdiParent = this;
+            fcp.StartPosition = FormStartPosition.CenterScreen;
+            fcp.Show();
 
         }
-        private void ChamaMarcas()
+        private void ChamaContasPagar()
         {
-            fMarcas grp = new fMarcas();
-            grp.Text = "CADASTRO DE MARCAS DE PRODUTOS";
-            grp.StartPosition = FormStartPosition.CenterScreen;
-            grp.WindowState = FormWindowState.Normal;
-            grp.MdiParent = this;
-            grp.Show();
+            fContasPagar fcp = new fContasPagar();
+            fcp.MdiParent = this;
+            fcp.StartPosition = FormStartPosition.CenterScreen;
+            fcp.Show();
 
         }
 
-        private void ChamaOrcamentos()
+        private void ChamaEmpresa()
         {
-            fOrcamento grp = new fOrcamento();
-            grp.Text = "Orçamentos ao cliente";
-            grp.StartPosition = FormStartPosition.CenterScreen;
-            grp.WindowState = FormWindowState.Normal;
-            grp.MdiParent = this;
-            grp.Show();
-
+            fEmpresa femp = new fEmpresa();
+            femp.MdiParent = this;
+            femp.StartPosition = FormStartPosition.CenterScreen;
+            femp.Show();
         }
 
-        private void ChamaTransportadores()
+        private void ChamaCaixaAbertura()
         {
-            fTransportadores tra = new fTransportadores();
-            tra.Text = "Cadastro de Transportadores";
-            tra.StartPosition = FormStartPosition.CenterScreen;
-            tra.WindowState = FormWindowState.Normal;
-            tra.MdiParent = this;
-            tra.Show();
+            if(LoginOperacao.ToUpper()=="ADMINISTRADOR" || LoginOperacao.ToUpper()=="GERENTE" || LoginOperacao.ToUpper()=="FINANCEIRO")
+            {
+                fCaixaGeral_Abertura fcga = new fCaixaGeral_Abertura();
+                fcga.StartPosition = FormStartPosition.CenterScreen;
+                fcga.ParametroID = LoginUsuario.ToString();
+                fcga.ShowDialog();
 
-        }
+            } else
+            {
+                MessageBox.Show("Permissão Negada !");
 
-        private void ChamaFormasPagamento()
-        {
-            fFormasPagamento fpg = new fFormasPagamento();
-            fpg.Text = "Formas de Pagamento";
-            fpg.StartPosition = FormStartPosition.CenterScreen;
-            fpg.WindowState = FormWindowState.Normal;
-            fpg.MdiParent = this;
-            fpg.Show();
-        }
-
-
-        private void ChamaProdutos()
-        {
-            fProdutos fpg = new fProdutos();
-            fpg.Text = "Produtos";
-            fpg.StartPosition = FormStartPosition.CenterScreen;
-            fpg.WindowState = FormWindowState.Normal;
-            fpg.MdiParent = this;
-            fpg.Show();
-
-        }
-
-
-        private void ChamaPedido()
-        {
-            fPedido fpg = new fPedido();
-            fpg.Text = "Pedido";
-            fpg.StartPosition = FormStartPosition.CenterScreen;
-            fpg.WindowState = FormWindowState.Normal;
-            fpg.MdiParent = this;
-            fpg.Show();
-
-        }
-
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-            lg.StartPosition = FormStartPosition.CenterScreen;
-            lg.WindowState = FormWindowState.Normal;
-            lg.ShowDialog();
-
-            // pegar os dados do parametro do formulario flogin
-
-            lblUsuario.Text = lg.ParametroUsuario.ToString();
-            lblNomeUsuario.Text = lg.ParametroNomeUsuario.ToString();
-            lblOperador.Text = lg.ParametroOperador.ToString();
-            lblData.Text = DateTime.Now.Date.ToString("dd-MM-yyy");
+            }
             
         }
 
-        private void toolStripComboBox1_Click(object sender, EventArgs e)
+        private void ChamaCaixaMovimento()
         {
+            if (LoginOperacao.ToUpper() == "ADMINISTRADOR" || LoginOperacao.ToUpper() == "GERENTE" || LoginOperacao.ToUpper() == "FINANCEIRO")
+            {
+                fCaixaGeral_Movimento fcgm = new fCaixaGeral_Movimento();
+                fcgm.StartPosition = FormStartPosition.CenterScreen;
+                //fcgm.ParametroID = LoginUsuario.ToString();
+                fcgm.ShowDialog();
+
+            }
+            else
+            {
+                MessageBox.Show("Permissão Negada !");
+
+            }
 
         }
 
-        private void sairDoSistemaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            ChamaClientes();
+            ChamaClientes();            
+        }
+
+        private void compradoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fServicos ser = new fServicos();
+            ser.MdiParent = this;
+            ser.BackColor = Color.White;
+            ser.StartPosition = FormStartPosition.CenterScreen;
+            ser.Show();
+        }
+
+        private void transportadorasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fTecnicos tec = new fTecnicos();
+            tec.MdiParent = this;
+            tec.StartPosition = FormStartPosition.CenterScreen;
+            tec.Show();
+        }
+
+        private void ordemDeServiçosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fOrdemServicos os = new fOrdemServicos();
+            os.MdiParent = this;
+            os.StartPosition = FormStartPosition.CenterScreen;
+            os.Show();
+        }
+
+        private void centroDeCustosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fCentroCustos cc = new fCentroCustos();
+            cc.MdiParent = this;
+            cc.StartPosition = FormStartPosition.CenterScreen;
+            cc.Show();
+        }
+
+        private void contasAReceberToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChamaContasReceber();
+        }
+
+        private void fornecedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChamaFornecedores();
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -173,42 +263,62 @@ namespace MenuPrincipalB
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            ChamaVendedores();
+            ChamaContasPagar();
         }
 
-        private void gruposToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ChamaGrupos();
+            ChamaCentroVendas();
         }
 
-        private void marcasToolStripMenuItem_Click(object sender, EventArgs e)
+        private void toolStripButton4_Click(object sender, EventArgs e)
         {
-            ChamaMarcas();
+            ChamaContasReceber();
         }
 
-        private void orçamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void contasAPagarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ChamaOrcamentos();
+            ChamaContasPagar();
         }
 
-        private void formasDePagamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void dadosDaEmpresaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ChamaFormasPagamento();
+            ChamaEmpresa();
         }
 
-        private void transportadoresToolStripMenuItem_Click(object sender, EventArgs e)
+        private void funcionáriosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            ChamaTransportadores();
+            ChamaUsuarios();
         }
 
-        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void aberturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ChamaProdutos();
+            ChamaCaixaAbertura();
         }
 
-        private void pedidoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void fMenu_KeyDown(object sender, KeyEventArgs e)
         {
-            ChamaPedido();
+            if (e.KeyCode == Keys.U && e.Control)
+            {
+                fMenu_Load("", e);
+            }
+
+            if (e.KeyCode == Keys.X && e.Control)
+            {
+                DialogResult xsim = MessageBox.Show("Deseja mesmo Sair ?", "Atenção", MessageBoxButtons.YesNo);
+                if(xsim == DialogResult.Yes)
+                {
+                    Application.Exit();
+                }
+            }
+
+
+        }
+
+        private void movimentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChamaCaixaMovimento();
         }
     }
+
 }

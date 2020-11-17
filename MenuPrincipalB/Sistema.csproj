@@ -153,6 +153,7 @@
     <Compile Include="Models\CentroCustos.cs" />
     <Compile Include="Models\CentroVendas.cs" />
     <Compile Include="Models\ContasReceber.cs" />
+    <Compile Include="Models\Empresa.cs" />
     <Compile Include="Models\Estoque.cs" />
     <Compile Include="fCaixaGeral_Abertura.cs">
       <SubType>Form</SubType>
