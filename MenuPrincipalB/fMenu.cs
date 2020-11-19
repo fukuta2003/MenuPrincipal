@@ -246,6 +246,31 @@ namespace Sistema
             cc.Show();
         }
 
+        private void ChamaOrcamento()
+        {
+            fOrcamento fo = new fOrcamento();
+            fo.MdiParent = this;
+            fo.StartPosition = FormStartPosition.CenterScreen;
+            fo.Show();
+
+        }
+        private void ChamaPedidos()
+        {
+            fPedido fp = new fPedido();
+            fp.MdiParent = this;
+            fp.StartPosition = FormStartPosition.CenterScreen;
+            fp.Show();
+
+        }
+        private void ChamaFormasPagamento()
+        {
+            fFormasPagamento fp = new fFormasPagamento();
+            fp.MdiParent = this;
+            fp.StartPosition = FormStartPosition.CenterScreen;
+            fp.Show();
+
+        }
+
         private void contasAReceberToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChamaContasReceber();
@@ -318,6 +343,21 @@ namespace Sistema
         private void movimentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChamaCaixaMovimento();
+        }
+
+        private void orçamentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChamaOrcamento();
+        }
+
+        private void pedidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChamaPedidos();
+        }
+
+        private void formasDePagamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChamaFormasPagamento();
         }
     }
 

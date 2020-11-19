@@ -24,7 +24,6 @@ namespace Sistema
         Grupos Gru = new Grupos();
         Validacao Val = new Validacao();
 
-
         // tratamento de imagens
         private long tamanhoArquivoImagem = 0;
         private byte[] vetorImagens;

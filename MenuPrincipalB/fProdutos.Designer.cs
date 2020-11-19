@@ -239,7 +239,7 @@
             // btnExcluir
             // 
             this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnExcluir.BackgroundImage = global::Sistema.Properties.Resources.close;
+            //this.btnExcluir.BackgroundImage = global::Sistema.Properties.Resources.close;
             this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnExcluir.ForeColor = System.Drawing.Color.White;
             this.btnExcluir.Location = new System.Drawing.Point(111, 350);
@@ -255,7 +255,7 @@
             // btnSalvar
             // 
             this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnSalvar.BackgroundImage = global::Sistema.Properties.Resources.checks;
+          //  this.btnSalvar.BackgroundImage = global::Sistema.Properties.Resources.checks;
             this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
             this.btnSalvar.Location = new System.Drawing.Point(29, 350);

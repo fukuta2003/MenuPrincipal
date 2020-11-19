@@ -13,11 +13,16 @@ namespace Sistema.Models
         public string DataInicial { get; set; }
         public string DataFinal { get; set; }
 
-        public bool Confirma(string Pergunta, string Titulo)
+        public bool Confirma(string Pergunta, string Titulo = "")
         {
             bool ret = false;
 
-            DialogResult xSimNao = MessageBox.Show("Posso salvar os dados ?", "Atenção !", MessageBoxButtons.YesNo);
+            if (Titulo == "")
+            {
+                Titulo = "Atenção";
+            }
+
+            DialogResult xSimNao = MessageBox.Show(Pergunta, Titulo, MessageBoxButtons.YesNo);
             if (xSimNao == DialogResult.Yes)
             {
                 ret = true;

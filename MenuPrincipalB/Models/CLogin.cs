@@ -70,8 +70,8 @@ namespace Sistema.Models
                         {
                             if (dr["ativo"].ToString() == "S")
                             {
-                                //  ((MenuStrip)Application.OpenForms["fMenu"].Controls["menuStrip1"]).Enabled = true;
-                                //  ((ToolStrip)Application.OpenForms["fMenu"].Controls["toolStrip1"]).Enabled = true;
+                                 ((MenuStrip)Application.OpenForms["fMenu"].Controls["menuStrip1"]).Enabled = true;
+                                 ((ToolStrip)Application.OpenForms["fMenu"].Controls["toolStrip1"]).Enabled = true;
 
                                 Login = dr["login"].ToString();
                                 Password = dr["password"].ToString();

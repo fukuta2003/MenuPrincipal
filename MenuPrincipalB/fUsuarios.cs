@@ -127,8 +127,8 @@ namespace Sistema
                 txtSenha.Focus();
                 return;
             }
-           DialogResult x = Funcoes.Confirma("Posso salvar os dados ?", "Atenção");
-           if(x == DialogResult.Yes)
+           bool x = Funcoes.Confirma("Posso salvar os dados ?");
+           if(x)
             {
                 DadosparaClasse();
                 if(usr.Salva(wp_Incluir))
