@@ -8,79 +8,93 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Sistema.Models;
+using System.Data.SqlClient;
 
 namespace Sistema
 {
     public partial class fLogin : Form
     {
-        // instanciamento da classe clogin para o nome do objeto login
 
-        CLogin login = new CLogin();
-        string NomeUsuario = "";
-        string Operador = "";
-        // 03-07-2020 criar o parametro para passar os dados para o formulario menu
-        // dados do usuario logado
-        public string ParametroUsuario
+        CLogin cl = new CLogin();
+
+        public String ParametroID
         {
-            get { return txtUsuario.Text; }  // retorno do txtusuario.text (usuario logado)
+            get { return txtUsuario.Text; }
         }
-
-        public string ParametroNomeUsuario
-        {
-            get { return NomeUsuario.ToString();  }
-        }
-
-        public string ParametroOperador
-        {
-            get { return Operador.ToString(); }
-        }
-
 
         public fLogin()
         {
             InitializeComponent();
         }
 
-        private void btnSair_Click(object sender, EventArgs e)
-        {
-            Application.Exit();  // encerra o sistema
-        }
-
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            // passando os dados de usuario e senha para classe cLogin
-            login.Login = txtUsuario.Text;
-            login.Password = txtSenha.Text;
-
-            if (login.Consulta_Login())
-            {
-                NomeUsuario = login.NomeUsuario.ToString();
-                Operador = login.Operador.ToString();
-                this.Close();
-            } else
-            {
-                MessageBox.Show("Usuário ou senha inválidos !");
-                txtUsuario.Focus();
-            }
-
-        }
-
         private void fLogin_Load(object sender, EventArgs e)
         {
-            if (!login.Conecta())  // se não conectar ao banco de dados encerra o sistema
-            {
-                MessageBox.Show("Servidor não conectado !");
-                Application.Exit();
+            /*
+            TextBox txtNome = new TextBox();
+            txtNome.MaxLength = 50;
+            txtNome.Location = new Point(187, 51);
+            this.Controls.Add(txtNome);
+            txtNome.Visible = true;
+            */
 
+            if (!cl.Abre_BancoDados())
+            {
+                MessageBox.Show("Não foi possível obter a conexão. Veja o log de erros.");
+                Application.Exit();
             } else
             {
-                // caso o teste de conexão seja ok
-                // MessageBox.Show("CONEXÃO OK !");  
-               
+                cl.conn.Close();
             }
+        }
 
-            login.FechaBancoDeDados();  // apos o teste fecha a conexao com o banco de dados
+        private void button2_Click(object sender, EventArgs e)
+        {
+            cl.Login = "EXIT";
+            cl.Password = "EXIT";
+            txtUsuario.Text = cl.Login;
+            this.Close();
+        }
 
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmdLogin_Click(object sender, EventArgs e)
+        {
+
+            cl.Login = txtUsuario.Text;
+            cl.Password = txtSenha.Text;
+            if(cl.Consulta_Login())
+            {
+               
+                this.Close();
+                
+            } else
+            {
+                MessageBox.Show("Usuário ou Senha Inválidos");
+                txtUsuario.Focus();
+            }
+            cl.conn.Close();
+           
+        }
+
+        private void txtUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = e.SuppressKeyPress = true;  // tira o beep do windows
+                txtSenha.Focus();
+            }
+        }
+
+        private void txtSenha_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = e.SuppressKeyPress = true;  // tira o beep do windows
+                cmdLogin.Focus();
+            }
         }
     }
 }

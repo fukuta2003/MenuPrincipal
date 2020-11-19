@@ -12,7 +12,7 @@ using System.Windows.Forms;
 using System.Xml;
 using Sistema.Models;
 
-namespace MenuPrincipalB
+namespace Sistema
 {
     public partial class fOrcamento : Form
     {

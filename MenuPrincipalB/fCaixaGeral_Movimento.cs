@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Sistema.Models;
 
-namespace SistemaPadrao
+namespace Sistema
 {
     public partial class fCaixaGeral_Movimento : Form
     {

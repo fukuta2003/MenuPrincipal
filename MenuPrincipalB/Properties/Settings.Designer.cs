@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MenuPrincipalB.Properties
+namespace Sistema.Properties
 {
 
 

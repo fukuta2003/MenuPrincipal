@@ -139,7 +139,7 @@ namespace Sistema
 
         private void ChamaFornecedores()
         {
-            Fornecedores fd = new Fornecedores();
+            fFornecedores fd = new fFornecedores();
             fd.MdiParent = this;
             fd.StartPosition = FormStartPosition.CenterScreen;
             fd.Show();

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContasPagar.cs" />
     <Compile Include="fCaixaGeral_Movimento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +58,48 @@
     </Compile>
     <Compile Include="fCentroCustos.designer.cs">
       <DependentUpon>fCentroCustos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCentroVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fCentroVendas.designer.cs">
+      <DependentUpon>fCentroVendas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fContasPagar_Baixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fContasPagar_Baixa.designer.cs">
+      <DependentUpon>fContasPagar_Baixa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fContasPagar_Show.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fContasPagar_Show.designer.cs">
+      <DependentUpon>fContasPagar_Show.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fEmpresa.designer.cs">
+      <DependentUpon>fEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fServicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fServicos.designer.cs">
+      <DependentUpon>fServicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fTecnicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fTecnicos.designer.cs">
+      <DependentUpon>fTecnicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fUsuarios.designer.cs">
+      <DependentUpon>fUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\CaixaGeralMovimento.cs" />
     <Compile Include="fClientes.cs">
@@ -152,7 +195,11 @@
     <Compile Include="Models\CaixaGeral.cs" />
     <Compile Include="Models\CentroCustos.cs" />
     <Compile Include="Models\CentroVendas.cs" />
+    <Compile Include="Models\ContasPagar.cs" />
     <Compile Include="Models\ContasReceber.cs" />
+    <Compile Include="Models\CrudOrdemServicos.cs" />
+    <Compile Include="Models\CrudServicos.cs" />
+    <Compile Include="Models\CrudTecnicos.cs" />
     <Compile Include="Models\Empresa.cs" />
     <Compile Include="Models\Estoque.cs" />
     <Compile Include="fCaixaGeral_Abertura.cs">
@@ -160,6 +207,18 @@
     </Compile>
     <Compile Include="fCaixaGeral_Abertura.designer.cs">
       <DependentUpon>fCaixaGeral_Abertura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fOrdemServicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fOrdemServicos.designer.cs">
+      <DependentUpon>fOrdemServicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fContasPagar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fContasPagar.designer.cs">
+      <DependentUpon>fContasPagar.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Orcamento.cs" />
     <Compile Include="Models\Pedido.cs" />
@@ -173,6 +232,7 @@
     <Compile Include="Models\Fornecedores.cs" />
     <Compile Include="Models\Grupos.cs" />
     <Compile Include="Models\Produtos.cs" />
+    <Compile Include="Models\Usuarios.cs" />
     <Compile Include="Models\Validacao.cs" />
     <Compile Include="Models\Vendedores.cs" />
     <Compile Include="Program.cs" />
@@ -189,8 +249,17 @@
     <EmbeddedResource Include="fCentroCustos.resx">
       <DependentUpon>fCentroCustos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fCentroVendas.resx">
+      <DependentUpon>fCentroVendas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fClientes.resx">
       <DependentUpon>fClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fContasPagar_Baixa.resx">
+      <DependentUpon>fContasPagar_Baixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fContasPagar_Show.resx">
+      <DependentUpon>fContasPagar_Show.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fContasReceber.resx">
       <DependentUpon>fContasReceber.cs</DependentUpon>
@@ -200,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fContasReceber_Show.resx">
       <DependentUpon>fContasReceber_Show.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fEmpresa.resx">
+      <DependentUpon>fEmpresa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fFormasPagamento.resx">
       <DependentUpon>fFormasPagamento.cs</DependentUpon>
@@ -228,14 +300,29 @@
     <EmbeddedResource Include="fProdutos.resx">
       <DependentUpon>fProdutos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fServicos.resx">
+      <DependentUpon>fServicos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fShow.resx">
       <DependentUpon>fShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fTecnicos.resx">
+      <DependentUpon>fTecnicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fUsuarios.resx">
+      <DependentUpon>fUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fVendedores.resx">
       <DependentUpon>fVendedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fCaixaGeral_Abertura.resx">
       <DependentUpon>fCaixaGeral_Abertura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fOrdemServicos.resx">
+      <DependentUpon>fOrdemServicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fContasPagar.resx">
+      <DependentUpon>fContasPagar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

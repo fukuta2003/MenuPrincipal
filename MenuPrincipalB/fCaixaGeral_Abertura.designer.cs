@@ -1,4 +1,4 @@
-﻿namespace SistemaPadrao
+﻿namespace Sistema
 {
     partial class fCaixaGeral_Abertura
     {

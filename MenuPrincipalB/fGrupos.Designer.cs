@@ -1,4 +1,4 @@
-﻿namespace MenuPrincipalB
+﻿namespace Sistema
 {
     partial class fGrupos
     {

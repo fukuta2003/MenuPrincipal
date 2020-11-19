@@ -1,4 +1,4 @@
-﻿namespace MenuPrincipalB
+﻿namespace Sistema
 {
     partial class fVendedores
     {
@@ -131,7 +131,7 @@
             // 
             // pictNao
             // 
-            this.pictNao.BackgroundImage = global::MenuPrincipalB.Properties.Resources.close;
+            this.pictNao.BackgroundImage = global::Sistema.Properties.Resources.close;
             this.pictNao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictNao.Location = new System.Drawing.Point(378, 155);
             this.pictNao.Name = "pictNao";
@@ -142,7 +142,7 @@
             // 
             // pictOK
             // 
-            this.pictOK.BackgroundImage = global::MenuPrincipalB.Properties.Resources.checks;
+            this.pictOK.BackgroundImage = global::Sistema.Properties.Resources.checks;
             this.pictOK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictOK.Location = new System.Drawing.Point(378, 155);
             this.pictOK.Name = "pictOK";
@@ -163,7 +163,7 @@
             // btnExcluir
             // 
             this.btnExcluir.BackColor = System.Drawing.Color.Yellow;
-            this.btnExcluir.BackgroundImage = global::MenuPrincipalB.Properties.Resources.close;
+            this.btnExcluir.BackgroundImage = global::Sistema.Properties.Resources.close;
             this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluir.ForeColor = System.Drawing.Color.Black;
@@ -181,7 +181,7 @@
             // btnSalvar
             // 
             this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnSalvar.BackgroundImage = global::MenuPrincipalB.Properties.Resources.checks;
+            this.btnSalvar.BackgroundImage = global::Sistema.Properties.Resources.checks;
             this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
