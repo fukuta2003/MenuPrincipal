@@ -1,4 +1,4 @@
-﻿namespace MenuPrincipalB
+﻿namespace Sistema
 {
     partial class fEntradas
     {
@@ -59,21 +59,21 @@
             this.GrdPro = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.txtOrcamento = new System.Windows.Forms.TextBox();
-            this.lblVendedor = new System.Windows.Forms.Label();
-            this.txtVendedor = new System.Windows.Forms.TextBox();
+            this.txtEntrada = new System.Windows.Forms.TextBox();
+            this.lblComprador = new System.Windows.Forms.Label();
+            this.txtComprador = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.lblCliente = new System.Windows.Forms.Label();
-            this.txtCliente = new System.Windows.Forms.TextBox();
+            this.lblFornecedor = new System.Windows.Forms.Label();
+            this.txtFornecedor = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtData = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTotalLiquido = new System.Windows.Forms.TextBox();
             this.gpoDados = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.gpoDados.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,7 +129,7 @@
             this.txtEntrega.Location = new System.Drawing.Point(214, 314);
             this.txtEntrega.Name = "txtEntrega";
             this.txtEntrega.Size = new System.Drawing.Size(60, 20);
-            this.txtEntrega.TabIndex = 11;
+            this.txtEntrega.TabIndex = 10;
             this.txtEntrega.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblFormaPagamento
@@ -146,7 +146,7 @@
             this.txtFormaPagamento.Location = new System.Drawing.Point(14, 374);
             this.txtFormaPagamento.Name = "txtFormaPagamento";
             this.txtFormaPagamento.Size = new System.Drawing.Size(60, 20);
-            this.txtFormaPagamento.TabIndex = 8;
+            this.txtFormaPagamento.TabIndex = 12;
             this.txtFormaPagamento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtEditor
@@ -163,7 +163,7 @@
             this.txtTaxaEntrega.Location = new System.Drawing.Point(505, 316);
             this.txtTaxaEntrega.Name = "txtTaxaEntrega";
             this.txtTaxaEntrega.Size = new System.Drawing.Size(80, 20);
-            this.txtTaxaEntrega.TabIndex = 12;
+            this.txtTaxaEntrega.TabIndex = 11;
             this.txtTaxaEntrega.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label14
@@ -182,7 +182,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(819, 402);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(86, 80);
-            this.btnCancelar.TabIndex = 15;
+            this.btnCancelar.TabIndex = 19;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             // 
@@ -193,7 +193,7 @@
             this.btnGravar.Location = new System.Drawing.Point(727, 402);
             this.btnGravar.Name = "btnGravar";
             this.btnGravar.Size = new System.Drawing.Size(86, 80);
-            this.btnGravar.TabIndex = 14;
+            this.btnGravar.TabIndex = 18;
             this.btnGravar.Text = "Gravar";
             this.btnGravar.UseVisualStyleBackColor = false;
             // 
@@ -203,7 +203,7 @@
             this.txtObservacoes.Multiline = true;
             this.txtObservacoes.Name = "txtObservacoes";
             this.txtObservacoes.Size = new System.Drawing.Size(282, 82);
-            this.txtObservacoes.TabIndex = 13;
+            this.txtObservacoes.TabIndex = 16;
             // 
             // label11
             // 
@@ -228,7 +228,7 @@
             this.txtDescontoPorc.Location = new System.Drawing.Point(133, 436);
             this.txtDescontoPorc.Name = "txtDescontoPorc";
             this.txtDescontoPorc.Size = new System.Drawing.Size(48, 20);
-            this.txtDescontoPorc.TabIndex = 10;
+            this.txtDescontoPorc.TabIndex = 14;
             this.txtDescontoPorc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtDescontoReal
@@ -255,7 +255,7 @@
             this.txtTotalBruto.Location = new System.Drawing.Point(133, 403);
             this.txtTotalBruto.Name = "txtTotalBruto";
             this.txtTotalBruto.Size = new System.Drawing.Size(159, 20);
-            this.txtTotalBruto.TabIndex = 9;
+            this.txtTotalBruto.TabIndex = 13;
             this.txtTotalBruto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // columnHeader7
@@ -350,30 +350,32 @@
             this.columnHeader2.Text = "Descrição do Produto";
             this.columnHeader2.Width = 350;
             // 
-            // txtOrcamento
+            // txtEntrada
             // 
-            this.txtOrcamento.Location = new System.Drawing.Point(15, 28);
-            this.txtOrcamento.Name = "txtOrcamento";
-            this.txtOrcamento.Size = new System.Drawing.Size(89, 20);
-            this.txtOrcamento.TabIndex = 36;
-            this.txtOrcamento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtEntrada.Location = new System.Drawing.Point(15, 28);
+            this.txtEntrada.Name = "txtEntrada";
+            this.txtEntrada.Size = new System.Drawing.Size(89, 20);
+            this.txtEntrada.TabIndex = 36;
+            this.txtEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // lblVendedor
+            // lblComprador
             // 
-            this.lblVendedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.lblVendedor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblVendedor.Location = new System.Drawing.Point(636, 47);
-            this.lblVendedor.Name = "lblVendedor";
-            this.lblVendedor.Size = new System.Drawing.Size(291, 22);
-            this.lblVendedor.TabIndex = 7;
+            this.lblComprador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblComprador.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblComprador.Location = new System.Drawing.Point(636, 47);
+            this.lblComprador.Name = "lblComprador";
+            this.lblComprador.Size = new System.Drawing.Size(291, 22);
+            this.lblComprador.TabIndex = 7;
             // 
-            // txtVendedor
+            // txtComprador
             // 
-            this.txtVendedor.Location = new System.Drawing.Point(563, 47);
-            this.txtVendedor.Name = "txtVendedor";
-            this.txtVendedor.Size = new System.Drawing.Size(67, 20);
-            this.txtVendedor.TabIndex = 5;
-            this.txtVendedor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtComprador.Location = new System.Drawing.Point(563, 47);
+            this.txtComprador.Name = "txtComprador";
+            this.txtComprador.Size = new System.Drawing.Size(67, 20);
+            this.txtComprador.TabIndex = 5;
+            this.txtComprador.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtComprador.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtComprador_KeyDown);
+            this.txtComprador.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtComprador_KeyPress);
             // 
             // label6
             // 
@@ -384,22 +386,24 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Comprador - F2 - Cadastrados";
             // 
-            // lblCliente
+            // lblFornecedor
             // 
-            this.lblCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.lblCliente.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblCliente.Location = new System.Drawing.Point(204, 47);
-            this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(352, 22);
-            this.lblCliente.TabIndex = 4;
+            this.lblFornecedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblFornecedor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblFornecedor.Location = new System.Drawing.Point(204, 47);
+            this.lblFornecedor.Name = "lblFornecedor";
+            this.lblFornecedor.Size = new System.Drawing.Size(352, 22);
+            this.lblFornecedor.TabIndex = 4;
             // 
-            // txtCliente
+            // txtFornecedor
             // 
-            this.txtCliente.Location = new System.Drawing.Point(131, 47);
-            this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(67, 20);
-            this.txtCliente.TabIndex = 4;
-            this.txtCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtFornecedor.Location = new System.Drawing.Point(131, 47);
+            this.txtFornecedor.Name = "txtFornecedor";
+            this.txtFornecedor.Size = new System.Drawing.Size(67, 20);
+            this.txtFornecedor.TabIndex = 4;
+            this.txtFornecedor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtFornecedor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtFornecedor_KeyDown);
+            this.txtFornecedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFornecedor_KeyPress);
             // 
             // label3
             // 
@@ -466,11 +470,11 @@
             this.gpoDados.Controls.Add(this.label8);
             this.gpoDados.Controls.Add(this.label7);
             this.gpoDados.Controls.Add(this.GrdPro);
-            this.gpoDados.Controls.Add(this.lblVendedor);
-            this.gpoDados.Controls.Add(this.txtVendedor);
+            this.gpoDados.Controls.Add(this.lblComprador);
+            this.gpoDados.Controls.Add(this.txtComprador);
             this.gpoDados.Controls.Add(this.label6);
-            this.gpoDados.Controls.Add(this.lblCliente);
-            this.gpoDados.Controls.Add(this.txtCliente);
+            this.gpoDados.Controls.Add(this.lblFornecedor);
+            this.gpoDados.Controls.Add(this.txtFornecedor);
             this.gpoDados.Controls.Add(this.label3);
             this.gpoDados.Controls.Add(this.txtData);
             this.gpoDados.Controls.Add(this.label2);
@@ -481,23 +485,6 @@
             this.gpoDados.TabIndex = 37;
             this.gpoDados.TabStop = false;
             this.gpoDados.Text = "Dados do Pedido";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 299);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 13);
-            this.label5.TabIndex = 36;
-            this.label5.Text = "Nota Fiscal";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(16, 316);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(79, 20);
-            this.textBox1.TabIndex = 35;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label15
             // 
@@ -513,8 +500,25 @@
             this.textBox2.Location = new System.Drawing.Point(119, 316);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(79, 20);
-            this.textBox2.TabIndex = 37;
+            this.textBox2.TabIndex = 9;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(15, 299);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 13);
+            this.label5.TabIndex = 36;
+            this.label5.Text = "Nota Fiscal";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(16, 316);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(79, 20);
+            this.textBox1.TabIndex = 8;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // fEntradas
             // 
@@ -523,10 +527,12 @@
             this.ClientSize = new System.Drawing.Size(955, 571);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtOrcamento);
+            this.Controls.Add(this.txtEntrada);
             this.Controls.Add(this.gpoDados);
+            this.KeyPreview = true;
             this.Name = "fEntradas";
-            this.Text = "fEntradas";
+            this.Text = "ENTRADAS - COMPRAS";
+            this.Load += new System.EventHandler(this.fEntradas_Load);
             this.gpoDados.ResumeLayout(false);
             this.gpoDados.PerformLayout();
             this.ResumeLayout(false);
@@ -567,12 +573,12 @@
         private System.Windows.Forms.ListView GrdPro;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.TextBox txtOrcamento;
-        private System.Windows.Forms.Label lblVendedor;
-        private System.Windows.Forms.TextBox txtVendedor;
+        private System.Windows.Forms.TextBox txtEntrada;
+        private System.Windows.Forms.Label lblComprador;
+        private System.Windows.Forms.TextBox txtComprador;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblCliente;
-        private System.Windows.Forms.TextBox txtCliente;
+        private System.Windows.Forms.Label lblFornecedor;
+        private System.Windows.Forms.TextBox txtFornecedor;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker txtData;
         private System.Windows.Forms.Label label2;

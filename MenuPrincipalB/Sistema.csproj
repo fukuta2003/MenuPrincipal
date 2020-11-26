@@ -201,6 +201,7 @@
     <Compile Include="Models\CaixaGeral.cs" />
     <Compile Include="Models\CentroCustos.cs" />
     <Compile Include="Models\CentroVendas.cs" />
+    <Compile Include="Models\Compradores.cs" />
     <Compile Include="Models\ContasPagar.cs" />
     <Compile Include="Models\ContasReceber.cs" />
     <Compile Include="Models\CrudOrdemServicos.cs" />

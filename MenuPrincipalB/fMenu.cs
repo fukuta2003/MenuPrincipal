@@ -271,6 +271,14 @@ namespace Sistema
 
         }
 
+        private void ChamaEntrada()
+        {
+            fEntradas ent = new fEntradas();
+            ent.MdiParent = this;
+            ent.StartPosition = FormStartPosition.CenterScreen;
+            ent.Show();
+        }
+
         private void contasAReceberToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChamaContasReceber();
@@ -358,6 +366,11 @@ namespace Sistema
         private void formasDePagamentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChamaFormasPagamento();
+        }
+
+        private void entradaDeMercadoriaComprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChamaEntrada();
         }
     }
 
