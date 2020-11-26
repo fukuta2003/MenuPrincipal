@@ -83,6 +83,12 @@
     <Compile Include="fEmpresa.designer.cs">
       <DependentUpon>fEmpresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="fEntradas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fEntradas.Designer.cs">
+      <DependentUpon>fEntradas.cs</DependentUpon>
+    </Compile>
     <Compile Include="fServicos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +207,7 @@
     <Compile Include="Models\CrudServicos.cs" />
     <Compile Include="Models\CrudTecnicos.cs" />
     <Compile Include="Models\Empresa.cs" />
+    <Compile Include="Models\Entradas.cs" />
     <Compile Include="Models\Estoque.cs" />
     <Compile Include="fCaixaGeral_Abertura.cs">
       <SubType>Form</SubType>
@@ -272,6 +279,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fEmpresa.resx">
       <DependentUpon>fEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fEntradas.resx">
+      <DependentUpon>fEntradas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fFormasPagamento.resx">
       <DependentUpon>fFormasPagamento.cs</DependentUpon>

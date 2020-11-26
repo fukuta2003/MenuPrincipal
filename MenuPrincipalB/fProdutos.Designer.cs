@@ -97,7 +97,7 @@
             // 
             this.txtID.Location = new System.Drawing.Point(17, 31);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(114, 22);
+            this.txtID.Size = new System.Drawing.Size(68, 22);
             this.txtID.TabIndex = 0;
             this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             this.txtID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtID_KeyDown);
@@ -239,7 +239,6 @@
             // btnExcluir
             // 
             this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            //this.btnExcluir.BackgroundImage = global::Sistema.Properties.Resources.close;
             this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnExcluir.ForeColor = System.Drawing.Color.White;
             this.btnExcluir.Location = new System.Drawing.Point(111, 350);
@@ -255,7 +254,6 @@
             // btnSalvar
             // 
             this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-          //  this.btnSalvar.BackgroundImage = global::Sistema.Properties.Resources.checks;
             this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
             this.btnSalvar.Location = new System.Drawing.Point(29, 350);
@@ -601,7 +599,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(845, 471);
+            this.tabPage2.Size = new System.Drawing.Size(845, 435);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Outros";
             this.tabPage2.UseVisualStyleBackColor = true;
